@@ -1,7 +1,7 @@
 {
   "current": {
     "colors_solid_button_labels": "#ffffff",
-    "colors_accent_1": "#121212",
+    "colors_accent_1": "#c1ab7c",
     "gradient_accent_1": "",
     "colors_accent_2": "#334fb4",
     "gradient_accent_2": "",
@@ -105,6 +105,7 @@
         "blocks": {
           "announcement-bar-0": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "text": "Welcome to our store",
               "color_scheme": "background-1",
@@ -121,17 +122,17 @@
       "header": {
         "type": "header",
         "settings": {
-          "color_scheme": "accent-1",
-          "logo": "{{ shop.brand.logo }}",
-          "logo_width": 90,
+          "color_scheme": "background-1",
+          "logo_text": "Atoms",
+          "logo_width": 80,
           "logo_position": "middle-left",
           "menu": "main-menu",
           "menu_type_desktop": "dropdown",
           "show_line_separator": true,
           "enable_sticky_header": true,
           "margin_bottom": 0,
-          "padding_top": 20,
-          "padding_bottom": 20
+          "padding_top": 36,
+          "padding_bottom": 36
         }
       },
       "footer": {
@@ -141,33 +142,34 @@
             "type": "link_list",
             "settings": {
               "heading": "Quick links",
-              "menu": "footer"
+              "menu": "quick-links"
             }
           },
           "footer-1": {
             "type": "link_list",
             "settings": {
-              "heading": "Info",
-              "menu": "footer"
+              "heading": "Main Menu",
+              "menu": "main-menu"
             }
           },
-          "footer-2": {
-            "type": "text",
+          "d2d2e96b-3357-4d10-b4d2-a65c9178bc68": {
+            "type": "link_list",
             "settings": {
-              "heading": "Our mission",
-              "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+              "heading": "Other Pages",
+              "menu": "quick-links"
             }
           }
         },
         "block_order": [
           "footer-0",
           "footer-1",
-          "footer-2"
+          "d2d2e96b-3357-4d10-b4d2-a65c9178bc68"
         ],
         "settings": {
-          "color_scheme": "background-1",
+          "color_scheme": "none",
           "newsletter_enable": true,
           "newsletter_heading": "Subscribe to our emails",
+          "newsletter_intro": "Subscribe to the Joomlart newsletter to receive timely updates from your favorite products.",
           "show_social": true,
           "enable_country_selector": false,
           "enable_language_selector": false,

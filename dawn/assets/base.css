@@ -92,6 +92,24 @@
   --color-button-text: var(--color-foreground);
 }
 
+.button--primary {
+  --color-button: 193, 171, 124;
+  --color-button-text: 255, 255, 255;
+  --alpha-button-background: 1;
+}
+
+.color-background-2 .button--primary,
+.color-accent-1 .button--primary,
+.color-accent-2 .button--primary {
+  --color-button: var(--color-background);
+  --color-button-text: var(--color-foreground);
+}
+
+.color-inverse .button--primary {
+  --color-button: var(--color-background);
+  --color-button-text: var(--color-foreground);
+}
+
 .button--tertiary {
   --color-button: var(--color-base-outline-button-labels);
   --color-button-text: var(--color-base-outline-button-labels);
@@ -191,6 +209,10 @@
   --shadow-visible: var(--media-shadow-visible);
 }
 
+::root {
+  --font-body-family:  "HKGrotesk";
+}
+
 /* base */
 
 .no-js:not(html) {
@@ -257,6 +279,16 @@ html.no-js .no-js-hidden {
 .isolate {
   position: relative;
   z-index: 0;
+}
+
+.isolate > .banner__media {
+  z-index: 2;
+  background-color: transparent;
+}
+
+.isolate > .banner__media > img {
+  object-position: center top;
+  object-fit: contain;
 }
 
 .section + .section {
@@ -1031,45 +1063,45 @@ summary::-webkit-details-marker {
   }
 }
 
-.grid--1-col .grid__item {
+.grid--1-col > .grid__item {
   max-width: 100%;
   width: 100%;
 }
 
-.grid--3-col .grid__item {
+.grid--3-col > .grid__item {
   width: calc(33.33% - var(--grid-mobile-horizontal-spacing) * 2 / 3);
 }
 
 @media screen and (min-width: 750px) {
-  .grid--3-col .grid__item {
+  .grid--3-col > .grid__item {
     width: calc(33.33% - var(--grid-desktop-horizontal-spacing) * 2 / 3);
   }
 }
 
-.grid--2-col .grid__item {
+.grid--2-col > .grid__item {
   width: calc(50% - var(--grid-mobile-horizontal-spacing) / 2);
 }
 
 @media screen and (min-width: 750px) {
-  .grid--2-col .grid__item {
+  .grid--2-col > .grid__item {
     width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
   }
 
-  .grid--4-col-tablet .grid__item {
+  .grid--4-col-tablet > .grid__item {
     width: calc(25% - var(--grid-desktop-horizontal-spacing) * 3 / 4);
   }
 
-  .grid--3-col-tablet .grid__item {
+  .grid--3-col-tablet > .grid__item {
     width: calc(33.33% - var(--grid-desktop-horizontal-spacing) * 2 / 3);
   }
 
-  .grid--2-col-tablet .grid__item {
+  .grid--2-col-tablet > .grid__item {
     width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
   }
 }
 
 @media screen and (max-width: 989px) {
-  .grid--1-col-tablet-down .grid__item {
+  .grid--1-col-tablet-down > .grid__item {
     width: 100%;
     max-width: 100%;
   }
@@ -1086,27 +1118,27 @@ summary::-webkit-details-marker {
 }
 
 @media screen and (min-width: 990px) {
-  .grid--6-col-desktop .grid__item {
+  .grid--6-col-desktop > .grid__item {
     width: calc(16.66% - var(--grid-desktop-horizontal-spacing) * 5 / 6);
     max-width: calc(16.66% - var(--grid-desktop-horizontal-spacing) * 5 / 6);
   }
 
-  .grid--5-col-desktop .grid__item {
+  .grid--5-col-desktop > .grid__item {
     width: calc(20% - var(--grid-desktop-horizontal-spacing) * 4 / 5);
     max-width: calc(20% - var(--grid-desktop-horizontal-spacing) * 4 / 5);
   }
 
-  .grid--4-col-desktop .grid__item {
+  .grid--4-col-desktop > .grid__item {
     width: calc(25% - var(--grid-desktop-horizontal-spacing) * 3 / 4);
     max-width: calc(25% - var(--grid-desktop-horizontal-spacing) * 3 / 4);
   }
 
-  .grid--3-col-desktop .grid__item {
+  .grid--3-col-desktop > .grid__item {
     width: calc(33.33% - var(--grid-desktop-horizontal-spacing) * 2 / 3);
     max-width: calc(33.33% - var(--grid-desktop-horizontal-spacing) * 2 / 3);
   }
 
-  .grid--2-col-desktop .grid__item {
+  .grid--2-col-desktop > .grid__item {
     width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
     max-width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
   }
@@ -1118,7 +1150,7 @@ summary::-webkit-details-marker {
     max-width: 100%;
   }
 
-  .grid--1-col-desktop .grid__item {
+  .grid--1-col-desktop > .grid__item {
     width: 100%;
     max-width: 100%;
   }
@@ -1147,7 +1179,7 @@ summary::-webkit-details-marker {
     margin-right: 1.5rem;
   }
 
-  .grid--2-col-tablet-down .grid__item {
+  .grid--2-col-tablet-down > .grid__item {
     width: calc(50% - var(--grid-mobile-horizontal-spacing) / 2);
   }
 
@@ -2186,10 +2218,10 @@ input[type='checkbox'] {
 }
 
 .announcement-bar__message {
-  text-align: center;
   padding: 1rem 2rem;
   margin: 0;
   letter-spacing: 0.1rem;
+  text-transform: uppercase;
 }
 
 /* section-header */
@@ -2226,10 +2258,12 @@ input[type='checkbox'] {
 }
 
 .header {
-  display: grid;
+  display: flex;
   grid-template-areas: 'left-icon heading icons';
   grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
+  align-items: center;
+  justify-content: space-between;
 }
 
 @media screen and (min-width: 990px) {
@@ -2290,7 +2324,9 @@ input[type='checkbox'] {
 
 .header__heading-link .h2 {
   line-height: 1;
-  color: rgba(var(--color-foreground), 0.75);
+  color: var(--color-foreground);
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .header__heading-logo {
@@ -2594,6 +2630,8 @@ details[open] > .header__submenu {
   padding: 1.2rem;
   text-decoration: none;
   color: rgba(var(--color-foreground), 0.75);
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .header__menu-item:hover {
@@ -2605,8 +2643,8 @@ details[open] > .header__submenu {
 }
 
 .header__menu-item:hover span {
-  text-decoration: underline;
-  text-underline-offset: 0.3rem;
+  transition: text-decoration-thickness var(--duration-short) ease;
+  color: rgb(var(--color-foreground));
 }
 
 details[open] > .header__menu-item {
@@ -2623,13 +2661,12 @@ details[open] > .header__menu-item .icon-caret {
 
 .header__active-menu-item {
   transition: text-decoration-thickness var(--duration-short) ease;
-  color: rgb(var(--color-foreground));
-  text-decoration: underline;
-  text-underline-offset: 0.3rem;
+  color: rgb(var(--color-button));
 }
 
 .header__menu-item:hover .header__active-menu-item {
-  text-decoration-thickness: 0.2rem;
+  transition: text-decoration-thickness var(--duration-short) ease;
+  color: rgb(var(--color-button));
 }
 
 .header__submenu {

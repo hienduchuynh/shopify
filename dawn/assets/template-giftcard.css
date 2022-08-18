@@ -156,6 +156,20 @@ h2,
   box-shadow: 0 0 0 0.2rem rgb(var(--color-base-outline-button-labels));
 }
 
+.button--primary {
+  color: rgb(var(--color-base-outline-button-labels));
+  box-shadow: 0 0 0 0.1rem rgb(var(--color-base-outline-button-labels));
+  background-color: transparent;
+}
+
+.button--primary::selection {
+  background-color: rgba(var(--color-base-outline-button-labels), 0.3);
+}
+
+.button--primary:hover {
+  box-shadow: 0 0 0 0.2rem rgb(var(--color-base-outline-button-labels));
+}
+
 .gift-card {
   padding-bottom: 3.4rem;
 }

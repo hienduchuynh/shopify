@@ -92,6 +92,40 @@
     margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px;
   }
 
+  @font-face {
+    src: url({{ "hkgrotesk-regular-webfont.woff" | asset_url }}) format("woff");
+    font-family: 'HKGrotesk';
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    src: url({{ "hkgrotesk-bold-webfont.woff" | asset_url }}) format("woff");
+    font-family: 'HKGrotesk';
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    src: url({{ "hkgrotesk-medium-webfont.woff" | asset_url }}) format("woff");
+    font-family: 'HKGrotesk';
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    src: url({{ "hkgrotesk-semibold-webfont.woff" | asset_url }}) format("woff");
+    font-family: 'HKGrotesk';
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  body,
+  :root {
+    --font-heading-family: 'HKGrotesk', sans-serif;
+    --font-body-family: 'HKGrotesk', sans-serif;
+  }
+
   @media screen and (min-width: 750px) {
     .section-header {
       margin-bottom: {{ section.settings.margin_bottom }}px;
@@ -378,11 +412,12 @@
             {%- assign logo_height = section.settings.logo_width | divided_by: section.settings.logo.aspect_ratio -%}
             {{ section.settings.logo | image_url: width: section.settings.width | image_tag:
               class: 'header__heading-logo',
-              widths: '50, 100, 150, 200, 250, 300, 400, 500',
               height: logo_height,
               width: section.settings.logo_width,
               alt: logo_alt
             }}
+          {%- else if section.settings.logo_text != blank -%}
+            <span class="h2 logo_text">{{ section.settings.logo_text }}</span>
           {%- else -%}
             <span class="h2">{{ shop.name }}</span>
           {%- endif -%}
@@ -774,6 +809,17 @@
       "type": "image_picker",
       "id": "logo",
       "label": "t:sections.header.settings.logo.label"
+    },
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "t:sections.header.settings.logo_text.label"
+    },
+    {
+      "type": "font_picker",
+      "id": "logo_font",
+      "label": "Logo font",
+      "default": "helvetica_n4"
     },
     {
       "type": "range",
