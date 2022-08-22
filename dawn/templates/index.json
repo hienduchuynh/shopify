@@ -35,6 +35,7 @@
         "button"
       ],
       "settings": {
+        "mod_class": "section-header",
         "image": "shopify:\/\/shop_images\/home-landing.jpg",
         "image_2": "shopify:\/\/shop_images\/pic-1.png",
         "image_overlay_opacity": 0,
@@ -324,28 +325,28 @@
         "padding_bottom": 96
       }
     },
-    "1660790341a719206c": {
-      "type": "image-banner",
+    "1660890149815fbd37": {
+      "type": "image-banner-2",
       "blocks": {
-        "16607903417932c7a7-0": {
+        "1660890149a69f71b5-0": {
           "type": "heading",
           "settings": {
             "heading": "Download JA Atoms",
             "heading_size": "h1"
           }
         },
-        "16607903417932c7a7-1": {
+        "1660890149a69f71b5-1": {
           "type": "text",
           "settings": {
             "text": "Get the best Joomla eCommerce template and 150+ more professional Joomla templates now for only $89\/year",
             "text_style": "body"
           }
         },
-        "16607903417932c7a7-2": {
+        "1660890149a69f71b5-2": {
           "type": "buttons",
           "settings": {
             "button_label_1": "Download Now",
-            "button_link_1": "shopify:\/\/pages\/contact",
+            "button_link_1": "shopify:\/\/products\/black-leather-bag",
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -354,11 +355,12 @@
         }
       },
       "block_order": [
-        "16607903417932c7a7-0",
-        "16607903417932c7a7-1",
-        "16607903417932c7a7-2"
+        "1660890149a69f71b5-0",
+        "1660890149a69f71b5-1",
+        "1660890149a69f71b5-2"
       ],
       "settings": {
+        "mod_class": "section-header",
         "image": "shopify:\/\/shop_images\/bg_2.jpg",
         "image_overlay_opacity": 0,
         "image_height": "medium",
@@ -366,7 +368,7 @@
         "desktop_content_position": "middle-center",
         "show_text_box": false,
         "desktop_content_alignment": "center",
-        "color_scheme": "accent-1",
+        "color_scheme": "background-1",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": true,
         "show_text_below": true
@@ -378,6 +380,6 @@
     "rich_text",
     "1660787354ffdd5c5c",
     "166078788927bb46bf",
-    "1660790341a719206c"
+    "1660890149815fbd37"
   ]
 }

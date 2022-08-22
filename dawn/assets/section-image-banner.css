@@ -264,6 +264,10 @@
     padding: 5rem;
   }
 
+  .banner-2 .banner__content {
+    padding:  0;
+  }
+
   .banner__content--top-left {
     align-items: flex-start;
     justify-content: flex-start;

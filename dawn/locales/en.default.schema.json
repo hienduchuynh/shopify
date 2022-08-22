@@ -947,6 +947,9 @@
         "image_2": {
           "label": "Second image"
         },
+        "image_3": {
+          "label": "Third image" 
+        }, 
         "image_overlay_opacity": {
           "label": "Image overlay opacity"
         },
@@ -1095,6 +1098,9 @@
       "presets": {
         "name": "Image banner"
       }
+    },
+    "image-banner2": {
+      "name": "Image banner 2"
     },
     "image-with-text": {
       "name": "Image with text",
